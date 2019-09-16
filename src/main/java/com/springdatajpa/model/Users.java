@@ -1,15 +1,10 @@
 package com.springdatajpa.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Users {
@@ -22,20 +17,8 @@ public class Users {
 	private String teamName;
 	private Integer salary;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
-	private List<UsersLog> userslogs;
-
 	public Users() {
 		//
-	}
-
-	public List<UsersLog> getUserslogs() {
-		return userslogs;
-	}
-
-	public void setUserslogs(List<UsersLog> userslogs) {
-		this.userslogs = userslogs;
 	}
 
 	public Long getId() {

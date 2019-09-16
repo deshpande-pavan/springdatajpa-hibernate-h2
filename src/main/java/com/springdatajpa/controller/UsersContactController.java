@@ -1,6 +1,5 @@
 package com.springdatajpa.controller;
 
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +42,6 @@ public class UsersContactController {
 		user.setSalary(20000);
 		user.setTeamName("development");
 		
-		user.setUserslogs(Arrays.asList(log,log1));
 		userContact.setUser(user);
 		userContactRepo.save(userContact);
 		return userContactRepo.findAll();
